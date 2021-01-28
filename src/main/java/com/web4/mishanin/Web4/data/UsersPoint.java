@@ -24,7 +24,7 @@ public class UsersPoint {
     }
 
     @Column(name = "y")
-    private double y;
+    private String y;
     @Column(name = "r")
     private double r;
     @Column(name = "dte")
@@ -66,11 +66,11 @@ public class UsersPoint {
         this.x = x;
     }
 
-    public double getY() {
+    public String getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(String y) {
         this.y = y;
     }
 

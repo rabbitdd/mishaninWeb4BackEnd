@@ -2,7 +2,7 @@ package com.web4.mishanin.Web4.table;
 
 public class Point {
     private double x;
-    private double y;
+    private String y;
     private double r;
     private long time;
 
@@ -10,7 +10,7 @@ public class Point {
         this.x = x;
     }
 
-    public void setY(double y) {
+    public void setY(String y) {
         this.y = y;
     }
 
@@ -53,7 +53,7 @@ public class Point {
         return x;
     }
 
-    public double getY() {
+    public String getY() {
         return y;
     }
 

@@ -76,18 +76,15 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.10</version>
+		</dependency>
 	</dependencies>
 
 
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 	<repositories>
 		<repository>
@@ -119,5 +116,13 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

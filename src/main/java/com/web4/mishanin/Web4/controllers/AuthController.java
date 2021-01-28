@@ -44,6 +44,7 @@ public class AuthController {
     @PostMapping("/signUp")
     public String signUp(@RequestBody User user) {
         System.out.println(user.toString());
+        System.out.println("sdsdsd");
         String hashPassword = new BCryptPasswordEncoder(12).encode(user.getPassword());
         user.setPassword(hashPassword);
         return customerUserDetailService.addUser(user);

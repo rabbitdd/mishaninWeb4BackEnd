@@ -15,14 +15,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    private final String point1Dep = "/Web4-0.0.1-SNAPSHOT/auth/";
+    private final String point2Dep = "/Web4-0.0.1-SNAPSHOT/signUp/";
+    private final String point1Test = "/auth";
+    private final String point2Test = "/signUp";
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity.cors();
         httpSecurity.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/Web4-0.0.1-SNAPSHOT/auth/").permitAll()
-                .antMatchers("/Web4-0.0.1-SNAPSHOT/signUp/").permitAll()
-                .anyRequest().authenticated()
+                .antMatchers(point1Test).permitAll()
+                .antMatchers(point2Test).permitAll()
                 .and().httpBasic()
                 .and().sessionManagement().disable();
     }
