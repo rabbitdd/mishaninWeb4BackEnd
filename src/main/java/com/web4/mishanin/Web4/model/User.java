@@ -5,9 +5,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generate")
-    @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER_SEQ")
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generate")
+    //@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER_SEQ")
     @Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY, generator = "generate")
+    //@Column(columnDefinition = "serial")
+    @SequenceGenerator(sequenceName = "serial", allocationSize = 5, name="serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "generate")
     private int id;
 
     @Column(name = "email")

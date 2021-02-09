@@ -7,9 +7,10 @@ import javax.persistence.*;
 @Table(name = "POINTS")
 public class UsersPoint {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
-    @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER_SEQ")
-    @Column(name="id")
+    //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+    @SequenceGenerator(sequenceName = "serial", allocationSize = 5, name = "serial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "generate")
+    //@Column(name="id")
     private int id;
 
     @Column(name = "x")
