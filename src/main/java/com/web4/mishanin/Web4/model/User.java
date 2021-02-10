@@ -3,7 +3,7 @@ package com.web4.mishanin.Web4.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "USERS")
 public class User {
     //@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "generate")
     //@SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUSTOMER_SEQ")
