@@ -49,5 +49,9 @@ public class AuthController {
         user.setPassword(hashPassword);
         return customerUserDetailService.addUser(user);
     }
+    @GetMapping("/auth")
+    public String getAuth() {
+        return "auth";
+    }
 
 }
