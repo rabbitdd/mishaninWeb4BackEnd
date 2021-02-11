@@ -14,4 +14,5 @@ public interface CustomerRepository extends CrudRepository<UsersPoint, Integer> 
     <S extends UsersPoint> S save(S s);
     @Override
     void deleteAll();
+    void deleteUsersPointsByOwner(String owner);
 }

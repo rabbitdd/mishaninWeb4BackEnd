@@ -29,12 +29,13 @@ public class ServiceForData {
         point.setDate(usersPoint.getDate());
         point.setWorkTime(usersPoint.getTime());
         point.setAnswer(usersPoint.getAnswer());
+        point.setOwner(usersPoint.getOwner());
         System.out.println(point.getWorkTime());
         employeesCrudRepository.save(point);
     }
     @Transactional
-    public void delete() {
-        employeesCrudRepository.deleteAll();
+    public void delete(String username) {
+        employeesCrudRepository.deleteUsersPointsByOwner(username);
     }
 
 }

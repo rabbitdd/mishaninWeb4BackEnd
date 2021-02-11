@@ -21,6 +21,16 @@ public class Point {
     private String date;
     private String answer;
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    private String owner;
+
     public String getAnswer() {
         return answer;
     }

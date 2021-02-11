@@ -35,6 +35,17 @@ public class UsersPoint {
     @Column(name = "answer")
     private String answer;
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    @Column(name="owner")
+    private String owner;
+
     public String getDate() {
         return date;
     }

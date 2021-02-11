@@ -35,23 +35,28 @@ public class ServerSide {
                 "}";
     }
     @GetMapping("/table")
-    public ArrayList<Point> get(@RequestParam("flag") String flag) {
+    public ArrayList<Point> get(@RequestParam("flag") String flag, @RequestParam("username") String username) {
         System.out.println("GET");
+        System.out.println(username);
+        System.out.println();
         System.out.println(flag);
         if (flag.equals("1")) {
-            service.delete();
+            service.delete(username);
             points.clear();
             return points;
         }
+        points.clear();
         for (UsersPoint point : service.getEntity()) {
-            Point p = new Point();
-            p.setX(point.getX());
-            p.setY(point.getY());
-            p.setR(point.getR());
-            p.setAnswer(point.getAnswer());
-            p.setDate(point.getDate());
-            p.setTime(point.getWorkTime());
-            points.add(p);
+            if (point.getOwner().equals(username)) {
+                Point p = new Point();
+                p.setX(point.getX());
+                p.setY(point.getY());
+                p.setR(point.getR());
+                p.setAnswer(point.getAnswer());
+                p.setDate(point.getDate());
+                p.setTime(point.getWorkTime());
+                points.add(p);
+            }
         }
         return points;
     }
